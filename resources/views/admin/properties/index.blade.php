@@ -24,7 +24,7 @@
                 <tr>
                     <td>{{ $property->title }}</td>
                     <td>{{ $property->surface }}m²</td>
-                    <td>{{ number_format($property->price, thousands_separator: ' ') }}</td>
+                    <td>{{ number_format($property->price, '2', ',', " ") }} F CFA</td>
                     <td>{{ $property->city }}</td>
                     <td>
                         <div class="d-flex justify-content-end w-100 gap-2">
