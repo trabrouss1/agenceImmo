@@ -181,6 +181,8 @@ return [
 
     'attributes' => [
         "sold" => "vendu",
+        "firstname" => "prénom",
+        "lastname" => "nom",
         "rooms" => "pièces",
         "bedrooms" => "chambre",
         "floor" => "étage",
