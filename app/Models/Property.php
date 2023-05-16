@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Str;
 
 class Property extends Model
 {
@@ -29,5 +30,16 @@ class Property extends Model
     public function options(): BelongsToMany
     {
         return $this->belongsToMany(Options::class);
+    }
+
+
+    public function getSlug(): string
+    {
+        return Str::slug($this->title);
+    }
+
+    public function getFormatedPrice(?float $currencyValue, ?string $currency = "F CFA", int $decimals = 2): string
+    {
+        return number_format($currencyValue ?? 0, $decimals, ",", " ") . " $currency";
     }
 }

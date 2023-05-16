@@ -24,7 +24,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a href="/" @class(['nav-link', 'active' => str_contains($route, 'property.')]) >Biens</a>
+                        <a href="{{ route('property.index') }}" @class(['nav-link', 'active' => str_contains($route, 'property.')]) >Biens</a>
                     </li>
                 </ul>
             <span class="navbar-text">

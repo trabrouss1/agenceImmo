@@ -9,7 +9,7 @@ class HomeController extends Controller
 {
     public function home()
     {
-        $properties = Property::OrderBy('created_at', 'desc')->limit(4)->get();
+        $properties = Property::with('options')->OrderBy('created_at', 'desc')->limit(4)->get();
         return view("home", [
             'properties' => $properties
         ]);
