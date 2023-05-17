@@ -12,7 +12,9 @@
             @include('shared.input', ['placeholder' => 'Nombre de piéce mini', 'name' => 'rooms', 'type' => 'number' ,'label' => '', 'value' => $input['rooms'] ?? ''])
             @include('shared.input', ['placeholder' => 'Budegt Max', 'name' => 'price', 'type' => 'number' ,'label' => '', 'value' => $input['price'] ?? ''])
             @include('shared.input', ['placeholder' => 'Mot clef', 'name' => 'title', 'label' => '', 'value' => $input['title'] ?? ''])
-            <button class="btn btn-primary btn-sm flex-grow-0"> Rechercher </button>
+            <div>
+                <button class="btn btn-primary flex-grow-0"> Rechercher </button>
+            </div>
         </form>
     </div>
 

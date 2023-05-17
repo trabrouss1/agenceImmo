@@ -27,10 +27,7 @@
                         <a href="{{ route('property.index') }}" @class(['nav-link', 'active' => str_contains($route, 'property.')]) >Biens</a>
                     </li>
                 </ul>
-            <span class="navbar-text">
-                Navbar text with an inline element
-            </span>
-            </div>
+                @yield('nav')
         </div>
     </nav>
         @yield('content')

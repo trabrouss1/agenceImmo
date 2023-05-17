@@ -2,6 +2,34 @@
 
 @section('title', "Nos derniers biens")
 
+@guest
+    @section('nav')
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <form action="{{ route('login') }}" method="get">
+                        @csrf
+                        <button class="nav-link nav-link btn-primary border-4 text-light">Se connecter</button>
+                    </form>
+                </li>
+            </ul>
+    @endsection
+@endguest
+
+
+@auth
+    @section('nav')
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <form action="{{ route('logout') }}" method="post">
+                    @csrf
+                    @method('delete')
+                    <button class="nav-link btn-primary border-4 text-light">Se déconnecter</button>
+                </form>
+            </li>
+        </ul>
+    @endsection
+@endauth
+
 @section('content')
         <div class="bg-light p-5 mb-5 text-center">
             <div class="container">
